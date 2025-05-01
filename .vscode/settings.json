@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "costtacrazy",
+        "projectKey": "CosttaCrazy_playtechtv-site-poe"
+    }
+}
