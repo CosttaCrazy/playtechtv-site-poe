@@ -254,7 +254,6 @@
         }
         
         .accordion-button {
-            /* background-color: rgba(128, 107, 121, 0.2); */
             background-color: var(--primary);
             color: var(--light);
             box-shadow: none;
@@ -403,8 +402,15 @@
         // Animações: fade, zoom, from-right, from-left, from-top, from-bottom
         var animation = "from-left";
     
-        // Nome do produto
-        var product_name = "Plano Mensal - 1 Tela";
+        // Lista de produtos para mostrar aleatoriamente
+        var product_list = [
+            "Plano Mensal - 1 Tela",
+            "Plano Mensal - 2 Telas",
+            "Plano Anual - 3 Telas"
+        ];
+    
+        // Nome do produto (atualizado aleatoriamente)
+        var product_name = "";
     
         // Frase depois do nome da pessoa
         var phrase = "acabou de comprar";
@@ -422,20 +428,23 @@
     
         var option = {
             position: position,
-            cssAnimation: animation, // atualizada para versão 3.x
+            cssAnimation: animation,
             useIcon: true,
             timeout: timeout,
             messageMaxLength: 200
         };
     
         function show_notification() {
-            if (type_name == "masc") {
+            // Escolhe um produto aleatório da lista
+            product_name = product_list[Math.floor(Math.random() * product_list.length)];
+    
+            if (type_name === "masc") {
                 msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
-            } else if (type_name == "fem") {
+            } else if (type_name === "fem") {
                 msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
             } else {
                 var array_aux = ["masc", "fem"];
-                if (array_aux[Math.floor(Math.random() * array_aux.length)] == "masc") {
+                if (array_aux[Math.floor(Math.random() * array_aux.length)] === "masc") {
                     msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
                 } else {
                     msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
@@ -1161,13 +1170,13 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                      <iframe
+                    <iframe
                         src="https://geo.dailymotion.com/player.html?video=k5T413DeoCO7epBF21K&mute=true&controls=false&ui-logo=false&ui-start-screen-info=false&ui-theme=none"
                         allow="autoplay; fullscreen"
                         allowfullscreen
-                        frameborder="0"
+                        title="Dailymotion Video Player"
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
-                      </iframe>
+                    </iframe>
                     </div>
                   </div>            
             </div>
